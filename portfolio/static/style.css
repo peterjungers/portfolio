@@ -1,0 +1,290 @@
+/*
+Author: Peter Jungers
+Date: January 2023
+Description: CSS stylesheet for Peter Jungers portfolio
+*/
+
+
+/* || CSS RESET */
+html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* || SITE COLORS */
+:root {
+    --site-blue: #37628d;
+    --site-dark-gray: #646464;
+    --site-gray: #9a9a9a;
+    --site-medium-gray: #d0d0d0;
+    --site-medium-light-gray: #e0e0e0;
+    --site-light-gray: #e8e8e8;
+    --site-very-light-gray: #f8f8f8;
+    --site-black: #000;
+    --python-blue: #7ea6cd;
+    --python-light-blue: #c8d9ea;
+    --sql-orange: #ffb671;
+    --sql-light-orange: #ffdebf;
+    --html-green: #75b682;
+    --css-purple: #ae87da;
+    --css-light-purple: #e5cefc;
+    --javascript-yellow: #f9e86c;
+}
+
+
+/* || GENERAL STYLES */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--site-blue);
+}
+
+.background {
+    background-color: var(--site-very-light-gray);
+}
+
+a {
+    text-decoration-thickness: .03em;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    text-decoration-thickness: .05em;
+}
+
+a:focus {
+    outline-color: gray;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+h1.main-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+
+h1 .main-subheading {
+    font-weight: 200;
+}
+
+header {
+    margin-bottom: 2.25rem;
+}
+
+nav.nav-desktop {
+    background-color: var(--site-medium-light-gray);
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    border-left: 1px solid var(--site-gray);
+}
+
+nav h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+
+nav h2 a {
+    color: var(--site-black);
+    text-decoration: none;
+}
+
+nav h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.15rem;
+}
+
+nav ul:first-of-type {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+nav li a,
+nav li  a:visited {
+    color: var(--site-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+nav li a:hover,
+nav li a:focus,
+nav li a:active {
+    color: var(--site-black);
+}
+
+nav .super-link {
+    margin-top: .8rem;
+}
+
+nav .list-em-dash {
+    color: var(--site-blue);
+    list-style-type: "—";
+    margin-left: 1rem;
+    padding-left: 0;
+}
+
+.nav-padding {
+    padding: 2.5rem;
+}
+
+/* Main */
+#container-main {
+    min-width: 75%;
+    max-width: 100%;
+    margin-left: 15%;
+    padding-top: 2.5rem;
+}
+
+.grid-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 3%;
+}
+
+.paragraphs p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.paragraphs p:last-of-type {
+    margin-bottom: 0;
+}
+
+.paragraphs {
+    margin-bottom: 2rem;
+}
+
+p a:visited {
+    color: var(--site-black);
+}
+
+p a:hover,
+p a:focus,
+p a:active {
+    color: var(--site-dark-gray);
+}
+
+
+/* Tables */
+.grid-tables {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    column-gap: 3%;
+}
+
+.grid-tables table {
+    margin-bottom: 1.5rem;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    border-spacing: 1px;
+}
+
+caption {
+    font-weight: 200;
+    font-size: 1.25rem;
+    text-align: left;
+    margin-bottom: .25rem;
+    padding-left: .25rem;
+}
+
+
+th,
+td {
+    text-align: left;
+    padding: .25rem;
+    padding-left: .5rem;
+}
+
+th {
+    font-weight: 300;
+}
+
+td {
+    font-weight: 200;
+}
+
+#technical-skills {
+    align-self: start;
+}
+
+#software {
+    grid-column: 1 / span 2;
+}
+
+.table-gray th {
+    background-color: var(--site-medium-gray);
+}
+
+.table-gray tr:nth-child(even) {
+    background-color: var(--site-light-gray);
+}
+
+.table-gray tr:nth-child(odd) {
+    background-color: var(--site-medium-light-gray);
+}
+
+
+.python {
+    background-color: var(--python-blue);
+}
+
+.python-light {
+    background-color: var(--python-light-blue);
+}
+
+.sql {
+    background-color: var(--sql-orange);
+}
+
+.sql-light {
+    background-color: var(--sql-light-orange);
+}
+
+.html {
+    background-color: var(--html-green);
+}
+
+.css {
+    background-color: var(--css-purple);
+}
+
+.css-light {
+    background-color: var(--css-light-purple);
+}
+
+.javascript {
+    background-color: var(--javascript-yellow);
+}
+
+
+
+
+/* Footer */
+footer {
+    margin: 5rem 0;
+}
+
+footer p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: .85rem;
+}

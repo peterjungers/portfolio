@@ -1,0 +1,67 @@
+{#
+Author: Peter Jungers
+Date: January 2023
+#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Web development portfolio for Peter Jungers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    {% if title %}
+        <title>Peter Jungers | {{ title }}</title>
+    {% else %}
+        <title>Peter Jungers | Web development</title>
+    {% endif %}
+</head>
+<body>
+    <div class="background">
+        <div class="grid-main">
+            <div id="container-main">
+                <header>
+                    {% block header %}{% endblock header %}
+                </header>
+
+                {% block main_content %}{% endblock main_content %}
+
+                <footer class="nav-footer">
+                    <p>&copy;{{ current_year }} Peter Jungers</p>
+                </footer>
+            </div>
+
+            <nav class="nav-desktop">
+                <div class="nav-padding">
+                    <h2><a href="{{ url_for('index') }}">Peter Jungers</a></h2>
+                    <h3>Web development</h3>
+                    <ul>
+                        <li><a href="#">peterjungers@gmail.com</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Resume (pdf)</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li class="super-link"><a href="#">Full stack</a></li>
+                        <li class="list-em-dash"><a href="#">DFDRL statistics</a></li>
+                        <li class="list-em-dash"><a href="#">Mario Kart 8 Deluxe cups</a></li>
+                        <li class="super-link"><a href="#">Frontend exercises</a></li>
+                        <li class="list-em-dash"><a href="#">Frontend Mentor</a></li>
+                        <li class="list-em-dash"><a href="#">Javascript</a></li>
+                        <li class="list-em-dash"><a href="#">Bootstrap</a></li>
+                        <li class="super-link"><a href="#">Python projects</a></li>
+                        <li class="list-em-dash"><a href="#">DDRL Champions League</a></li>
+                        <li class="list-em-dash"><a href="#">Super Mario database</a></li>
+                        <li class="list-em-dash"><a href="#">Super Mario quiz</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
