@@ -4,9 +4,11 @@ Date: January 2023
 Description: CSS stylesheet for Peter Jungers portfolio
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@200;300&display=swap');
+
 
 /* || CSS RESET */
-html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td {
+html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td, img, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,8 +18,13 @@ html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, 
 /* || SITE COLORS */
 :root {
     --site-blue: #37628d;
+    --site-light-blue: #c8d9ea;
+    --site-teal: #48777a;
+    --site-light-teal: #cee2e3;
+    --site-brown: #725c55;
+    --site-light-brown: #d5cac7;
     --site-dark-gray: #646464;
-    --site-gray: #9a9a9a;
+    --site-gray: #9a9a9a;;
     --site-medium-gray: #d0d0d0;
     --site-medium-light-gray: #e0e0e0;
     --site-light-gray: #e8e8e8;
@@ -25,12 +32,12 @@ html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, 
     --site-black: #000;
     --python-blue: #7ea6cd;
     --python-light-blue: #c8d9ea;
-    --sql-orange: #ffb671;
-    --sql-light-orange: #ffdebf;
-    --html-green: #75b682;
-    --css-purple: #ae87da;
-    --css-light-purple: #e5cefc;
-    --javascript-yellow: #f9e86c;
+    --site-maroon: #753e3e;
+    --site-light-maroon: #dec7c7;
+    --site-light-orange: #efd3a1;
+    --site-purple: #6d4aab;
+    --site-light-purple: #d8d1e5;
+    --javascript-yellow: #b7a454;
 }
 
 
@@ -45,6 +52,14 @@ body {
 
 .background {
     background-color: var(--site-very-light-gray);
+}
+
+p a:link,
+p a:visited,
+p a:hover,
+p a:focus,
+p a:active {
+    color: var(--site-black);
 }
 
 a {
@@ -64,21 +79,57 @@ li {
     list-style-type: none;
 }
 
+img {
+    width: 100%;
+    max-width: 800px;
+}
+
+figure {
+    margin-bottom: 2em;
+}
+
+figcaption {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    /*padding-left: 4rem;*/
+    margin-top: -.5rem;
+    /*text-align: left;*/
+}
+
+
+/* || UTILITIES */
+.border-top {
+    /*border-top: 1px solid var(--site-medium-gray);*/
+    /*padding: .25rem 0;*/
+}
+
+.text-weight-300 {
+    font-weight: 300;
+}
+
+.align-center {
+    text-align: center;
+}
+
+
+/* Header */
+header {
+    /*margin-bottom: 2.25rem;*/
+}
 
 h1.main-heading {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1.75rem;
+    margin-bottom: 2.25rem;
 }
 
 h1 .main-subheading {
     font-weight: 200;
 }
 
-header {
-    margin-bottom: 2.25rem;
-}
 
+/* Nav sidebar */
 nav.nav-desktop {
     background-color: var(--site-medium-light-gray);
     position: sticky;
@@ -139,6 +190,7 @@ nav .list-em-dash {
     padding: 2.5rem;
 }
 
+
 /* Main */
 #container-main {
     min-width: 75%;
@@ -153,6 +205,10 @@ nav .list-em-dash {
     column-gap: 3%;
 }
 
+.paragraphs {
+    margin-bottom: 2rem;
+}
+
 .paragraphs p {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
@@ -165,25 +221,46 @@ nav .list-em-dash {
     margin-bottom: 0;
 }
 
-.paragraphs {
-    margin-bottom: 2rem;
+h2.project-heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1.35rem;
+    margin-bottom: .85rem;
 }
 
-p a:visited {
+.image-flex {
+    display: flex;
+    /*flex-wrap: wrap;*/
+    gap: 3%;
+}
+
+.project-info {
+    margin-bottom: 1rem;
+}
+
+.project-info ul {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+}
+
+.project-info li {
+    margin-bottom: .5rem;
+}
+
+.project-info a:link,
+.project-info a:visited,
+.project-info a:hover,
+.project-info a:focus,
+.project-info a:active {
     color: var(--site-black);
 }
 
-p a:hover,
-p a:focus,
-p a:active {
-    color: var(--site-dark-gray);
-}
 
 
 /* Tables */
 .grid-tables {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 3%;
 }
 
@@ -192,9 +269,7 @@ p a:active {
 }
 
 table {
-    table-layout: fixed;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     border-spacing: 1px;
 }
 
@@ -206,81 +281,72 @@ caption {
     padding-left: .25rem;
 }
 
-
 th,
 td {
     text-align: left;
-    padding: .25rem;
-    padding-left: .5rem;
+    padding: .25rem .5rem;
 }
 
 th {
     font-weight: 300;
+    color: var(--site-black);
+    background-color: var(--site-medium-gray);
 }
 
 td {
     font-weight: 200;
+    background-color: var(--site-light-gray);
+}
+
+table a:link,
+table a:visited,
+table a:hover,
+table a:focus,
+table a:active {
+    color: var(--site-black);
+}
+
+.fixed-table-width {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-gray th {
+    background-color: var(--site-gray);
+}
+
+.table-gray tr {
+    background-color: var(--site-light-gray);
+}
+
+#languages {
+    grid-column: 1 / span 3;
 }
 
 #technical-skills {
+    grid-column: 4 / span 3;
     align-self: start;
 }
 
 #software {
     grid-column: 1 / span 2;
+    align-self: start;
 }
 
-.table-gray th {
-    background-color: var(--site-medium-gray);
+/* Contains Education and Hobbies tables */
+#table-container {
+    grid-column: 3 / span 4;
+    align-self: start;
 }
 
-.table-gray tr:nth-child(even) {
-    background-color: var(--site-light-gray);
+#education {
+    width: 100%;
 }
-
-.table-gray tr:nth-child(odd) {
-    background-color: var(--site-medium-light-gray);
-}
-
-
-.python {
-    background-color: var(--python-blue);
-}
-
-.python-light {
-    background-color: var(--python-light-blue);
-}
-
-.sql {
-    background-color: var(--sql-orange);
-}
-
-.sql-light {
-    background-color: var(--sql-light-orange);
-}
-
-.html {
-    background-color: var(--html-green);
-}
-
-.css {
-    background-color: var(--css-purple);
-}
-
-.css-light {
-    background-color: var(--css-light-purple);
-}
-
-.javascript {
-    background-color: var(--javascript-yellow);
-}
-
-
 
 
 /* Footer */
 footer {
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 footer p {

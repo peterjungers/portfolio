@@ -11,7 +11,7 @@ Date: January 2023
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+{#    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Poppins:wght@200;300&display=swap" rel="stylesheet">#}
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     {% if title %}
@@ -31,7 +31,7 @@ Date: January 2023
                 {% block main_content %}{% endblock main_content %}
 
                 <footer class="nav-footer">
-                    <p>&copy;{{ current_year }} Peter Jungers</p>
+                    <p>&copy;{{ current_year }} Peter Jungers | <a href="#">peterjungers@gmail.com</a></p>
                 </footer>
             </div>
 
@@ -47,8 +47,8 @@ Date: January 2023
                     </ul>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li class="super-link"><a href="#">Full stack</a></li>
-                        <li class="list-em-dash"><a href="#">DFDRL statistics</a></li>
+                        <li class="super-link"><a href="{{ url_for('full_stack') }}">Full stack</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='dfdrl') }}">DFDRL statistics</a></li>
                         <li class="list-em-dash"><a href="#">Mario Kart 8 Deluxe cups</a></li>
                         <li class="super-link"><a href="#">Frontend exercises</a></li>
                         <li class="list-em-dash"><a href="#">Frontend Mentor</a></li>

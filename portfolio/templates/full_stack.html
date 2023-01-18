@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "template.html" %}
 
-</body>
-</html>
+{% block header %}
+    <h1 class="main-heading">Full stack web projects</h1>
+{% endblock header %}
+
+{% block main_content %}
+    <section class="paragraphs">
+        <p>
+            I use Flask and Django frameworks to create my full stack sites, all of which were built from scratch and are fully responsive. I am especially interested in creating practical, dynamic sites, where information can be found readily and intuitively. I had a lot of fun working on these projects!
+        </p>
+    </section>
+
+    <section id="dfdrl">
+        <h2 class="project-heading">Damon & Felix Die-Cast Racing League</h2>
+        <div class="project-info">
+            <ul>
+                <li>
+                    <span class="text-weight-300">Date: </span>December 2022/January 2023
+                </li>
+                <li>
+                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/dfdrl/index</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/dfdrl</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Learning objectives: </span>Create a sizeable site using the Flask framework; design SQLite database and improve SQLAlchemy query skills; utilize Bootstrap
+                    for CSS styling; use custom JavaScript to create searchable vehicle table.
+                </li>
+                <li>
+                    <span class="text-weight-300">Unforeseen learning outcomes: </span>Better understanding of the Jinja2 templating language and its capabilities; more familiarity with Bootstrap source file; less use of constructing raw SQL queries as a precursor to constructing SQLAlchemy queries—most queries were constructed with SQLAlchemy from the beginning.
+                </li>
+            </ul>
+        </div>
+        <div class="image-flex">
+            <figure class="align-center">
+                <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website.">
+                <figcaption>Index page for the DFDRL site</figcaption>
+            </figure>
+            <figure class="align-center">
+                <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website.">
+                <figcaption>Index page for the DFDRL site</figcaption>
+            </figure>
+        </div>
+        <div class="paragraphs">
+            <p>
+                The Damon & Felix Die-Cast Racing League, of which I am a board member, team manager, and lead statistician, is a high-performance die-cast racing league, comprised primarily of Hot Wheels vehicles, but with a healthy showing from Matchbox. Each season culminates in the Champions League, where twelve vehicles compete to be the league champion. More information about the workings of the league are found on the <a href="#">site itself</a>.
+            </p>
+            <p>
+                I have been keeping stats of various kinds for the league since its first season, primarily using Google Sheets, which helped inspire the look and functionality of the new site. My other inspiration came from
+                <a href="#">my first Python project</a>, which was a searchable database that directly inspired the vehicles stats search on the new site. My primary goal in creating the site was not only to have a historical record of the league, but to create functionality for team managers to better track their vehicles.
+            </p>
+        </div>
+    </section>
+
+{% endblock main_content %}
