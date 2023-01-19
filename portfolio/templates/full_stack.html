@@ -5,13 +5,14 @@
 {% endblock header %}
 
 {% block main_content %}
-    <section class="paragraphs">
+    <section class="paragraphs margin-btm-3">
         <p>
             I use Flask and Django frameworks to create my full stack sites, all of which were built from scratch and are fully responsive. I am especially interested in creating practical, dynamic sites, where information can be found readily and intuitively. I had a lot of fun working on these projects!
         </p>
     </section>
 
-    <section id="dfdrl">
+    <!-- DFDRL -->
+    <section id="dfdrl" class="margin-btm-4">
         <h2 class="project-heading">Damon & Felix Die-Cast Racing League</h2>
         <div class="project-info">
             <ul>
@@ -50,6 +51,128 @@
             <p>
                 I have been keeping stats of various kinds for the league since its first season, primarily using Google Sheets, which helped inspire the look and functionality of the new site. My other inspiration came from
                 <a href="#">my first Python project</a>, which was a searchable database that directly inspired the vehicles stats search on the new site. My primary goal in creating the site was not only to have a historical record of the league, but to create functionality for team managers to better track their vehicles.
+            </p>
+        </div>
+    </section>
+
+    <!-- MK8D Cup Generator -->
+    <section id="mk8d" class="margin-btm-4">
+        <h2 class="project-heading">Mario Kart 8 Deluxe Cup Generator</h2>
+        <div class="project-info">
+            <ul>
+                <li>
+                    <span class="text-weight-300">Date: </span>October 2022
+                </li>
+                <li>
+                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/mk8d/index</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/mk8d_project</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Learning objectives: </span>Improve Flask skills; improve HTML and custom CSS coding know-how; design SQLite database and improve SQLAlchemy query skills.
+                </li>
+                <li>
+                    <span class="text-weight-300">Unforeseen learning outcomes: </span>A more solid understanding of and appreciation for the CSS grid property.
+                </li>
+            </ul>
+        </div>
+        <div class="image-flex">
+            <figure class="align-center">
+                <img src="" alt="">
+                <figcaption></figcaption>
+            </figure>
+            <figure class="align-center">
+                <img src="" alt="">
+                <figcaption></figcaption>
+            </figure>
+        </div>
+        <div class="paragraphs">
+            <p>
+                Mario Kart 8 Deluxe for the Nintendo Switch contains, to date, 72 tracks spread over 18 cups. The goal of my Cup Generator is to expand upon these original cups by constructing new ones based on thematic similarities across tracks throughout the game. For example, a number of tracks are set in the sky; others take place within large buildings. I therefore created a database of the tracks in the game, determined what the new thematic cups would be, then constructed the user interface to allow the easy viewing of these new cups. Like with the DFDRL project, I wanted to create a site that I could use. The site is updated and expanded every few months as Nintendo releases new tracks for the game.
+            </p>
+            <p>
+                This was my second Flask project, and first that was completely independent. My <a href="#">first Flask site</a>, though necessarily containing unique SQLAlchemy queries, relied heavily on tutorials for its HTML and CSS. With the Mario Kart 8 Deluxe Cup Generator, however, I became more comfortable and confident with all aspects of the framework, a trend that continues with each subsequent project I work on..
+            </p>
+        </div>
+    </section>
+
+    <!-- Super Mario Quiz -->
+    <section id="super-mario-quiz" class="margin-btm-4">
+        <h2 class="project-heading">Super Mario Quiz</h2>
+        <div class="project-info">
+            <ul>
+                <li>
+                    <span class="text-weight-300">Date: </span>January 2023
+                </li>
+                <li>
+                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/super_mario_quiz/index</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/super_mario_quiz_project</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Learning objectives: </span>Improve skills and knowledge of Django web framework.
+                </li>
+                <li>
+                    <span class="text-weight-300">Unforeseen learning outcomes: </span>I don't know yet!
+                </li>
+            </ul>
+        </div>
+        <div class="image-flex">
+            <figure class="align-center">
+                <img src="" alt="">
+                <figcaption></figcaption>
+            </figure>
+            <figure class="align-center">
+                <img src="" alt="">
+                <figcaption></figcaption>
+            </figure>
+        </div>
+        <div class="paragraphs">
+            <p>
+                Based on early Python project.
+            </p>
+            <p>
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="margin-btm-4">
+        <h2 class="project-heading">Portfolio</h2>
+        <div class="project-info">
+            <ul>
+                <li>
+                    <span class="text-weight-300">Date: </span>January 2023
+                </li>
+                <li>
+                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/</a>
+                </li>
+                <li>
+                    <span class="text-weight-300">Learning objectives: </span>Expand my knowledge and experience of web development by designing my own portfolio site; gain experience with Heroku and make the site live!
+                </li>
+                <li>
+                    <span class="text-weight-300">Unforeseen learning outcomes: </span>I don't know!
+                </li>
+            </ul>
+        </div>
+        <div class="image-flex">
+            <figure class="align-center">
+                <img src="{{ url_for('static', filename='images/a.png') }}" alt="a">
+                <figcaption>The site you're visiting right now!</figcaption>
+            </figure>
+        </div>
+        <div class="paragraphs">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A blanditiis deserunt dolor doloremque eveniet, impedit libero nisi porro possimus quidem repellendus veritatis voluptas voluptatibus! Accusantium beatae eaque explicabo magni suscipit.
+            </p>
+            <p>
+
             </p>
         </div>
     </section>

@@ -49,15 +49,17 @@ Date: January 2023
                         <li><a href="#">Home</a></li>
                         <li class="super-link"><a href="{{ url_for('full_stack') }}">Full stack</a></li>
                         <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='dfdrl') }}">DFDRL statistics</a></li>
-                        <li class="list-em-dash"><a href="#">Mario Kart 8 Deluxe cups</a></li>
-                        <li class="super-link"><a href="#">Frontend exercises</a></li>
-                        <li class="list-em-dash"><a href="#">Frontend Mentor</a></li>
-                        <li class="list-em-dash"><a href="#">Javascript</a></li>
-                        <li class="list-em-dash"><a href="#">Bootstrap</a></li>
-                        <li class="super-link"><a href="#">Python projects</a></li>
-                        <li class="list-em-dash"><a href="#">DDRL Champions League</a></li>
-                        <li class="list-em-dash"><a href="#">Super Mario database</a></li>
-                        <li class="list-em-dash"><a href="#">Super Mario quiz</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='mk8d') }}">Mario Kart 8 Deluxe cups</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='super_mario_quiz') }}">Super Mario Quiz</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='portfolio') }}">Portfolio</a></li>
+                        <li class="super-link"><a href="{{ url_for('frontend') }}">Frontend exercises</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('frontend', _anchor='frontend-mentor') }}">Frontend Mentor</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('frontend', _anchor='javascript') }}">Javascript</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('frontend', _anchor='sea-isle-city') }}">Bootstrap</a></li>
+                        <li class="super-link"><a href="{{ url_for('python') }}">Python projects</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('python', _anchor='ddrl-champions-league') }}">DDRL Champions League</a></li>
+                        <li class="list-em-dash"><a href="{{ url_for('python', _anchor='smb-character-db') }}">Super Mario database</a></li>
+                        <li class="list-em-dash"><a href="#">Super Mario Bros. quiz</a></li>
                     </ul>
                 </div>
             </nav>

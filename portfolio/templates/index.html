@@ -5,7 +5,7 @@
 {% endblock header %}
 
 {% block main_content %}
-    <section class="paragraphs">
+    <section class="paragraphs margin-btm-3">
         <p>
             Hello! My name is Peter Jungers, and I am a web developer with full stack skills. This is my portfolio! I have a special interest in creating sites that are intuitive in their usability,
             yet retain a sense of discovery. I have a keen sense of structure and organization, as well as attention to detail. I apply these skills not only when designing for the user, but also when
@@ -19,40 +19,32 @@
         </p>
     </section>
 
-    <div class="grid-tables">
+    <section class="grid-tables">
         <!-- Languages -->
         <table id="languages" class="fixed-table-width">
             <caption>Languages</caption>
             <tr>
-                <th>Python</th>
-                <th>HTML</th>
+                <th class="python">Python</th>
+                <th class="html">HTML</th>
             <tr>
-                <td>Flask</td>
-                <th>CSS</th>
+                <td class="python-light">Flask</td>
+                <th class="css">CSS</th>
             </tr>
             <tr>
-                <td>Django</td>
-                <td>Bootstrap</td>
+                <td class="python-light">Django</td>
+                <td class="css-light">Bootstrap</td>
             </tr>
             <tr>
-                <td>SQLAlchemy</td>
-                <th>JavaScript</th>
-
+                <td class="python-light">SQLAlchemy</td>
+                <th class="sql">SQL</th>
             </tr>
             <tr>
-                <td>Tkinter/Pygubu</td>
-                <th>SQL</th>
-
-
+                <td class="python-light">Jinja2</td>
+                <td class="sql-light">T-SQL</td>
             </tr>
             <tr>
-                <td>Pandas</td>
-                <td>T-SQL</td>
-
-            </tr>
-            <tr>
-                <td>Jupyter Notebook</td>
-                <td>SQLite</td>
+                <th class="js">JavaScript</th>
+                <td class="sql-light">SQLite</td>
             </tr>
         </table>
 
@@ -67,6 +59,7 @@
             <tr><td>Comfortable with Windows OS</td></tr>
 
         </table>
+
 
         <!-- Software -->
         <table id="software">
@@ -106,9 +99,9 @@
                 <tr><td>Portland Community College</td></tr>
                 <tr><td>Current GPA: 4.0</td></tr>
                 <tr><th>Graphic Design</th></tr>
-                <tr> <td>Associate of Applied Science</td></tr>
-                <tr> <td>Portland Community College</td></tr>
-                <tr> <td>Graduated 2011</td></tr>
+                <tr><td>Associate of Applied Science</td></tr>
+                <tr><td>Portland Community College</td></tr>
+                <tr><td>Graduated 2011</td></tr>
                 <tr><td>GPA: 3.92</td></tr>
                 <tr><th>English, Creative Writing emphasis</th></tr>
                 <tr><td>Bachelor of Arts</td></tr>
@@ -142,5 +135,5 @@
             </table>
         </div>
 
-    </div>
+    </section>
 {% endblock main_content %}

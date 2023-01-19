@@ -16,23 +16,17 @@ def index():
 
 @app.route("/full_stack")
 def full_stack():
-    title = "Full stack development"
+    title = "Full stack"
     return render_template("full_stack.html", title=title)
 
 
 @app.route("/frontend")
 def frontend():
-    title = "Frontend exercises"
+    title = "Frontend"
     return render_template("frontend.html", title=title)
 
 
 @app.route("/python")
 def python():
-    title = "Python projects"
+    title = "Python"
     return render_template("python.html", title=title)
-
-
-@app.route("/contact")
-def contact():
-    title = "Contact"
-    return render_template("contact.html", title=title)
