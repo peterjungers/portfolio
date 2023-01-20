@@ -92,11 +92,6 @@ figcaption {
 
 
 /* || UTILITIES */
-.border-top {
-    /*border-top: 1px solid var(--site-medium-gray);*/
-    /*padding: .25rem 0;*/
-}
-
 .text-weight-300 {
     font-weight: 300;
 }
@@ -116,14 +111,13 @@ figcaption {
 
 /* Header */
 header {
-    /*margin-bottom: 2.25rem;*/
+    margin-bottom: 2.25rem;
 }
 
 h1.main-heading {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1.75rem;
-    margin-bottom: 2.25rem;
 }
 
 h1 .main-subheading {
@@ -156,6 +150,7 @@ nav h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     font-size: 1.15rem;
+    color: var(--black);
 }
 
 nav ul:first-of-type {
@@ -164,7 +159,7 @@ nav ul:first-of-type {
     padding: 0;
 }
 
-nav li a,
+nav li a:link,
 nav li  a:visited {
     color: var(--blue);
     font-family: 'Poppins', sans-serif;
@@ -190,6 +185,7 @@ nav .list-em-dash {
 
 .nav-padding {
     padding: 2.5rem;
+    padding-top: 6.95rem;
 }
 
 
@@ -201,14 +197,10 @@ nav .list-em-dash {
     padding-top: 2.5rem;
 }
 
-.grid-main {
+.grid-site {
     display: grid;
     grid-template-columns: 3fr 1fr;
     column-gap: 3%;
-}
-
-.paragraphs {
-    /*margin-bottom: 2rem;*/
 }
 
 .paragraphs p {
@@ -258,7 +250,6 @@ h2.project-heading {
 }
 
 
-
 /* Tables */
 .grid-tables {
     display: grid;
@@ -300,48 +291,48 @@ td {
     background-color: var(--medium-light-gray);
 }
 
+table a:link,
+table a:visited,
+table a:hover,
+table a:focus,
+table a:active {
+    color: var(--very-light-gray);
+}
+
+.fixed-table-width {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Tables by ID */
+#languages {
+    grid-column: 1 / span 3;
+}
+
+#technical-skills {
+    grid-column: 4 / span 3;
+    align-self: start;
+}
+
+#software {
+    grid-column: 1 / span 2;
+    align-self: start;
+}
+
+#table-container { /* Contains Education and Hobbies tables */
+    grid-column: 3 / span 4;
+    align-self: start;
+}
+
+#education {
+    width: 100%;
+}
+
 #hobbies td {
     padding-bottom: .5rem;
 }
 
-#languages th,
-#hobbies th {
-    /*background-color: var(--site-blue);*/
-}
-
-#languages td,
-#hobbies td {
-    /*background-color: var(--site-light-blue);*/
-}
-
-#technical-skills td {
-    background-color: var(--medium-light-gray);
-}
-
-/*#software th {*/
-/*    background-color: var(--site-dark-gray);*/
-/*}*/
-
-/*#software td {*/
-/*    background-color: var(--site-medium-gray);*/
-/*}*/
-
-/*#education th {*/
-/*    background-color: var(--site-darker-gray);*/
-/*}*/
-
-/*#education td {*/
-/*    background-color: var(--site-mediumer-gray);*/
-/*}*/
-
-/*#hobbies th {*/
-/*    background-color: var(--site-grayer);*/
-/*}*/
-
-/*#hobbies td {*/
-/*    background-color: var(--site-medium-light-gray);*/
-/*}*/
-
+/* Background and text colors for Languages table */
 .python {
     background-color: var(--blue);
     color: var(--very-light-gray);
@@ -379,59 +370,88 @@ td {
     background-color: var(--light-orange);
 }
 
-table a:link,
-table a:visited,
-table a:hover,
-table a:focus,
-table a:active {
-    color: var(--very-light-gray);
-}
-
-.fixed-table-width {
-    table-layout: fixed;
-    width: 100%;
-}
-
-.table-gray th {
-    background-color: var(--gray);
-}
-
-.table-gray tr {
-    background-color: var(--site-light-gray);
-}
-
-#languages {
-    grid-column: 1 / span 3;
-}
-
-#technical-skills {
-    grid-column: 4 / span 3;
-    align-self: start;
-}
-
-#software {
-    grid-column: 1 / span 2;
-    align-self: start;
-}
-
-/* Contains Education and Hobbies tables */
-#table-container {
-    grid-column: 3 / span 4;
-    align-self: start;
-}
-
-#education {
-    width: 100%;
-}
-
 
 /* Footer */
 footer {
-    margin: 2rem 0;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 footer p {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     font-size: .85rem;
+}
+
+
+/* || VIEWPORTS */
+@media screen and (max-height: 820px) {
+    .nav-padding {
+        padding-top: 2.5rem;
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    nav.nav-desktop {
+        position: fixed;
+        z-index: 1;
+        width: 375px;
+        right: -375px;
+        transition: .5s;
+        overflow: auto;
+    }
+
+    .nav-padding {
+        padding-top: 6.95rem;
+    }
+
+    #container-main {
+        /*position: relative;*/
+        margin-left: 0;
+    }
+
+    .grid-site {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    #hamburger-icon {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 3.125rem;
+        right: 10%;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        transition: .5s;
+        z-index: 2;
+    }
+
+    .hamburger-line {
+        position: relative;
+        background-color: var(--black);
+        width: 100%;
+        height: 1px;
+    }
+
+    .hamburger-line::before {
+        content: "";
+        position: absolute;
+        background-color: var(--black);
+        width: 100%;
+        height: 1px;
+        transform: translateY(-8px);
+    }
+
+    .hamburger-line::after {
+        content: "";
+        position: absolute;
+        background-color: var(--black);
+        width: 100%;
+        height: 1px;
+        transform: translateY(8px);
+    }
 }

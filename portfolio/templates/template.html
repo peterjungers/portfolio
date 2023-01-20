@@ -22,20 +22,24 @@ Date: January 2023
 </head>
 <body>
     <div class="background">
-        <div class="grid-main">
+        <div id="hamburger-icon">
+            <div class="hamburger-line"></div>
+        </div>
+        <div class="grid-site">
             <div id="container-main">
+
                 <header>
                     {% block header %}{% endblock header %}
                 </header>
 
                 {% block main_content %}{% endblock main_content %}
 
-                <footer class="nav-footer">
+                <footer>
                     <p>&copy;{{ current_year }} Peter Jungers | <a href="#">peterjungers@gmail.com</a></p>
                 </footer>
             </div>
 
-            <nav class="nav-desktop">
+            <nav id="nav-menu" class="nav-desktop">
                 <div class="nav-padding">
                     <h2><a href="{{ url_for('index') }}">Peter Jungers</a></h2>
                     <h3>Web development</h3>
@@ -65,5 +69,7 @@ Date: January 2023
             </nav>
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
