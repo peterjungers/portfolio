@@ -20,7 +20,9 @@ html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, 
     --black: #000;
     --dark-gray: #919191;
     --gray: #9a9a9a;
-    --medium-light-gray: #e0e0e0;
+    /*--medium-light-gray: #e0e0e0; old */
+    --medium-light-gray: #d9d9d9;
+    --light-gray: #ececec;
     --very-light-gray: #f8f8f8;
     --blue: #37628d;
     --light-blue: #c8d9ea;
@@ -45,6 +47,12 @@ body {
 
 .background {
     background-color: var(--very-light-gray);
+}
+
+.grid-site {
+    display: grid;
+    grid-template-columns: 2.25fr 1fr;
+    column-gap: 3%;
 }
 
 p a:link,
@@ -108,10 +116,29 @@ figcaption {
     margin-bottom: 4rem;
 }
 
+/*
+ I thought this was a great solution to targeting anchor links
+ so they wouldn't disappear behind a sticky header at the top
+ of a page:
+ https://stackoverflow.com/a/22655654/21046255
+ (The style below is for desktop viewport, where there is no
+ sticky header, but the solution still provides nice top padding
+ for the header. See VIEWPORTS section below for more settings
+ with a sticky header):
+ */
+:target::before {
+    content: '';
+    display: block;
+    height: 2.75rem;
+    margin-top: -2.75rem;
+}
+
 
 /* Header */
 header {
-    margin-bottom: 2.25rem;
+    margin: 0 0 1.75rem -1rem;
+    padding: 2.5rem 0 1rem 1rem;
+    border-bottom: 1px solid var(--gray);
 }
 
 h1.main-heading {
@@ -124,10 +151,22 @@ h1 .main-subheading {
     font-weight: 200;
 }
 
+.desktop-header {
+    display: block;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.galaxy-header {
+    display: none;
+}
+
 
 /* Nav sidebar */
-nav.nav-desktop {
-    background-color: var(--medium-light-gray);
+#nav-menu {
+    background-color: var(--light-gray);
     position: sticky;
     top: 0;
     align-self: start;
@@ -185,7 +224,7 @@ nav .list-em-dash {
 
 .nav-padding {
     padding: 2.5rem;
-    padding-top: 6.95rem;
+    padding-top: 4.75rem;
 }
 
 
@@ -194,13 +233,7 @@ nav .list-em-dash {
     min-width: 75%;
     max-width: 100%;
     margin-left: 15%;
-    padding-top: 2.5rem;
-}
-
-.grid-site {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    column-gap: 3%;
+    /*padding-top: 2.5rem;*/
 }
 
 .paragraphs p {
@@ -311,17 +344,16 @@ table a:active {
 
 #technical-skills {
     grid-column: 4 / span 3;
-    align-self: start;
+    /*align-self: start;*/
 }
 
 #software {
     grid-column: 1 / span 2;
-    align-self: start;
 }
 
-#table-container { /* Contains Education and Hobbies tables */
+/* Contains Education and Hobbies tables: */
+#table-container {
     grid-column: 3 / span 4;
-    align-self: start;
 }
 
 #education {
@@ -332,7 +364,7 @@ table a:active {
     padding-bottom: .5rem;
 }
 
-/* Background and text colors for Languages table */
+/* Background and text colors for Languages table: */
 .python {
     background-color: var(--blue);
     color: var(--very-light-gray);
@@ -385,15 +417,30 @@ footer p {
 
 
 /* || VIEWPORTS */
-@media screen and (max-height: 820px) {
-    .nav-padding {
-        padding-top: 2.5rem;
+@media screen and (max-width: 1050px) {
+    /*
+    Top padding for anchor links necessary because of sticky header
+    (See UTILITIES section above for attribution):
+    */
+    :target::before {
+        height: 7.25rem;
+        margin-top: -7.25rem;
     }
-}
 
+    header {
+        position: sticky;
+        top: 0;
+        display: flex;
+        gap: 3%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--very-light-gray);
+        padding-top: 2rem;
+        padding-right: 1rem;
+        margin-right: -1rem;
+    }
 
-@media screen and (max-width: 950px) {
-    nav.nav-desktop {
+    #nav-menu {
         position: fixed;
         z-index: 1;
         width: 375px;
@@ -404,6 +451,10 @@ footer p {
 
     .nav-padding {
         padding-top: 6.95rem;
+    }
+
+    .is-active {
+        display: block;
     }
 
     #container-main {
@@ -418,16 +469,17 @@ footer p {
     }
 
     #hamburger-icon {
-        position: absolute;
+        /*position: absolute;*/
         display: flex;
         align-items: center;
-        top: 3.125rem;
-        right: 10%;
-        width: 24px;
+        /*top: 3.125rem;*/
+        /*right: 10%;*/
+        min-width: 24px;
         height: 24px;
         cursor: pointer;
-        transition: .5s;
-        z-index: 2;
+        /*transition: .5s;*/
+        /*z-index: 2;*/
+        rotate: -90deg;
     }
 
     .hamburger-line {
@@ -437,21 +489,113 @@ footer p {
         height: 1px;
     }
 
-    .hamburger-line::before {
-        content: "";
-        position: absolute;
-        background-color: var(--black);
-        width: 100%;
-        height: 1px;
-        transform: translateY(-8px);
-    }
-
+    .hamburger-line::before,
     .hamburger-line::after {
         content: "";
         position: absolute;
         background-color: var(--black);
         width: 100%;
         height: 1px;
+    }
+
+    .hamburger-line::before {
+        transform: translateY(-8px);
+    }
+
+    .hamburger-line::after {
         transform: translateY(8px);
     }
+
+    #x-icon {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 2.5rem;
+        right: 2.5rem;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .x-line::before,
+    .x-line::after {
+        content: "";
+        position: absolute;
+        background-color: var(--black);
+        width: 24px;
+        height: 1px;
+    }
+
+    .x-line::before {
+        rotate: -45deg;
+    }
+
+    .x-line::after {
+        rotate: 45deg;
+    }
 }
+
+@media screen and (max-height: 820px) {
+    /*
+    Less top padding better visually for nav header,
+    especially at tablet viewports
+    :*/
+    .nav-padding {
+        padding-top: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-tables {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 750px), (max-height: 450px) {
+    h1.main-heading {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 1.25rem;
+    }
+
+    h1 .main-subheading {
+        font-weight: 200;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main-subheading {
+        /*display: none;*/
+    }
+
+    header {
+        /*margin: 0 -1rem 1.75rem -1rem;*/
+        /*padding: 2rem 1rem 1rem 1rem;*/
+        /*border-bottom: 1px solid var(--gray);*/
+        padding-top: 1rem;
+        padding-bottom: .75rem;
+    }
+
+    .desktop-header {
+        display: none;
+    }
+
+    .mobile-header {
+        display: block;
+    }
+
+    /* :target::before needs to chane this view—check others*/
+}
+
+@media screen and (max-width: 350px) {
+    .mobile-header {
+        display: none;
+    }
+
+    .galaxy-header {
+        display: block;
+    }
+
+    /* Check other headers on pages for better line breaks; X in nav should move up */
+}
+

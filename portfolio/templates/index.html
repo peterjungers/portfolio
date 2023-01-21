@@ -1,7 +1,17 @@
 {% extends "template.html" %}
 
 {% block header %}
-    <h1 class="main-heading">Peter Jungers<span class="main-subheading"> | Full stack web developer</span></h1>
+    <h1 class="main-heading desktop-header">Peter Jungers<span class="main-subheading"> | Full stack web developer</span></h1>
+    <div class="mobile-header">
+        <h1 class="main-heading">Peter Jungers</h1>
+        <h1 class="main-heading"><span class="main-subheading">Full stack web developer</span></h1>
+    </div>
+    <div class="galaxy-header">
+        <h1 class="main-heading">Peter Jungers</h1>
+        <h1 class="main-heading"><span class="main-subheading">Full stack</span></h1>
+        <h1 class="main-heading"><span class="main-subheading">web developer</span></h1>
+    </div>
+
 {% endblock header %}
 
 {% block main_content %}
@@ -49,7 +59,7 @@
         </table>
 
         <!-- Technical skills -->
-        <table id="technical-skills">
+        <table id="technical-skills" class="fixed-table-width">
             <caption>Technical skills</caption>
             <tr><td>Experience using Git and GitHub</td></tr>
             <tr><td>Fundamental knowledge of TCP/IP stack</td></tr>
@@ -62,7 +72,7 @@
 
 
         <!-- Software -->
-        <table id="software">
+        <table id="software" class="fixed-table-width">
             <caption>Software</caption>
             <tr><th>IDE</th></tr>
             <tr><td>PyCharm</td></tr>
@@ -72,6 +82,10 @@
             <tr><td>Chrome</td></tr>
             <tr><td>Safari</td></tr>
             <tr><td>Firefox</td></tr>
+            <tr><th>Adobe Creative Suite</th></tr>
+            <tr><td>InDesign</td></tr>
+            <tr><td>Illustrator</td></tr>
+            <tr><td>Photoshop</td></tr>
             <tr><th>Server</th></tr>
             <tr><td>Heroku</td></tr>
             <tr><td>FileZilla</td></tr>
@@ -84,10 +98,6 @@
             <tr><td>PowerPoint</td></tr>
             <tr><td>Excel</td></tr>
             <tr><td>Access</td></tr>
-            <tr><th>Adobe Creative Suite</th></tr>
-            <tr><td>InDesign</td></tr>
-            <tr><td>Illustrator</td></tr>
-            <tr><td>Photoshop</td></tr>
         </table>
 
         <div id="table-container">

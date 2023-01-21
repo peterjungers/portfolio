@@ -22,14 +22,13 @@ Date: January 2023
 </head>
 <body>
     <div class="background">
-        <div id="hamburger-icon">
-            <div class="hamburger-line"></div>
-        </div>
         <div class="grid-site">
             <div id="container-main">
-
                 <header>
                     {% block header %}{% endblock header %}
+                    <div id="hamburger-icon">
+                        <div class="hamburger-line"></div>
+                    </div>
                 </header>
 
                 {% block main_content %}{% endblock main_content %}
@@ -39,8 +38,11 @@ Date: January 2023
                 </footer>
             </div>
 
-            <nav id="nav-menu" class="nav-desktop">
+            <nav id="nav-menu">
                 <div class="nav-padding">
+                    <div id="x-icon">
+                        <div class="x-line"></div>
+                    </div>
                     <h2><a href="{{ url_for('index') }}">Peter Jungers</a></h2>
                     <h3>Web development</h3>
                     <ul>
@@ -50,7 +52,7 @@ Date: January 2023
                         <li><a href="#">Resume (pdf)</a></li>
                     </ul>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li class="super-link"><a href="{{ url_for('full_stack') }}">Full stack</a></li>
                         <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='dfdrl') }}">DFDRL statistics</a></li>
                         <li class="list-em-dash"><a href="{{ url_for('full_stack', _anchor='mk8d') }}">Mario Kart 8 Deluxe cups</a></li>
