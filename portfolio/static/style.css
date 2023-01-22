@@ -141,18 +141,41 @@ header {
     border-bottom: 1px solid var(--gray);
 }
 
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:link,
+h1 a:visited,
+h1 a:hover,
+h1 a:focus,
+h1 a:active {
+    color: var(--black);
+}
+
 h1.main-heading {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1.75rem;
 }
 
+h1.main-subheading,
 h1 .main-subheading {
+    font-family: 'Poppins', sans-serif;
     font-weight: 200;
+    font-size: 1.75rem;
 }
 
-.desktop-header {
+.desk-tab-header {
     display: block;
+}
+
+.desk-mob-header {
+    display: block;
+}
+
+.tab-mob-header {
+    display: none;
 }
 
 .mobile-header {
@@ -445,7 +468,7 @@ footer p {
         z-index: 1;
         width: 375px;
         right: -375px;
-        transition: .5s;
+        /*transition: .5s;*/
         overflow: auto;
     }
 
@@ -545,49 +568,70 @@ footer p {
     }
 }
 
+@media screen and (max-width: 760px) {
+    .desk-header {
+        display: none;
+    }
+
+    .tab-mob-header {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .grid-tables {
         display: block;
     }
 }
 
-@media screen and (max-width: 750px), (max-height: 450px) {
-    h1.main-heading {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-        font-size: 1.25rem;
+@media screen and (max-width: 550px), (max-height: 450px) {
+    /*
+    Top padding for anchor links necessary because of sticky header
+    (See UTILITIES section at top for attribution):
+    */
+    :target::before {
+        height: 5.35rem;
+        margin-top: -5.35rem;
     }
 
-    h1 .main-subheading {
-        font-weight: 200;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .main-subheading {
-        /*display: none;*/
-    }
 
     header {
-        /*margin: 0 -1rem 1.75rem -1rem;*/
-        /*padding: 2rem 1rem 1rem 1rem;*/
-        /*border-bottom: 1px solid var(--gray);*/
         padding-top: 1rem;
         padding-bottom: .75rem;
     }
 
-    .desktop-header {
+    h1.main-heading {
+        font-size: 1.25rem;
+    }
+
+    h1.main-subheading,
+    h1 .main-subheading {
+        font-size: 1.25rem;
+    }
+
+    .desk-tab-header {
         display: none;
+    }
+
+    .desk-mob-header {
+        display: block;
     }
 
     .mobile-header {
         display: block;
     }
-
-    /* :target::before needs to chane this view—check others*/
 }
 
+/* Galaxy Fold and other very narrow viewports: */
 @media screen and (max-width: 350px) {
+    .desk-mob-header {
+        display: none;
+    }
+
+    .tab-mob-header {
+        display: none;
+    }
+
     .mobile-header {
         display: none;
     }
@@ -596,6 +640,9 @@ footer p {
         display: block;
     }
 
-    /* Check other headers on pages for better line breaks; X in nav should move up */
+    #x-icon {
+        top: 1rem;
+        right: 1rem;
+    }
 }
 

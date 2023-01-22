@@ -1,173 +1,114 @@
-function openNavMenu() {
-    const hamburgerIcon = document.querySelector("#hamburger-icon");
-    const navMenu = document.querySelector("#nav-menu");
-    // const body = document.querySelector("body");
-    background = document.querySelector("#container-main");
+const hamburgerIcon = document.querySelector("#hamburger-icon");
+const xIcon = document.querySelector("#x-icon");
+const navMenu = document.querySelector("#nav-menu");
+const background = document.querySelector("#container-main");
 
+
+function openNavMenu(event) {
     const mediaQuery = window.matchMedia("(max-width: 450px");
+    if (mediaQuery.matches) {
+        navMenu.style.width = "100vw";
+    }
 
-    hamburgerIcon.addEventListener("click", () => {
-        if (navMenu.style.right !== "0px") {
-            if (mediaQuery.matches) {
-                navMenu.style.width = "100vw";
-            }
-            navMenu.style.right = "0px";
-            navMenu.style.transition = ".5s";
-            // background.style.opacity = ".4";
-        }
-    });
+    event.stopPropagation();
+    navMenu.style.right = "0px";
+    navMenu.style.transition = ".5s";
+    background.style.opacity = ".4";
 
-    // window.addEventListener("click", (e) => {
-    //     if (e.target.contains(navMenu)) {
-    //         navMenu.style.width = "375px";
-    //         navMenu.style.right = "-375px";
-    //         navMenu.style.transition = ".3s";
-    //     }
-    // });
+    background.addEventListener("click", backgroundClick);
 }
 
 
-function closeNavMenu() {
-    const xIcon = document.querySelector("#x-icon");
-    const navMenu = document.querySelector("#nav-menu");
-    const navLinks = document.querySelectorAll("nav a");
-    const background = document.querySelector("#container-main")
+/*
+Closes navMenu upon click of background outside of navMenu
+(This article was extremely helpful in getting this to work:
+https://codeburst.io/the-off-click-7cbc08bb3df5):
+*/
+function backgroundClick() {
+    navMenu.style.right = "-375px";
+    navMenu.style.transition = ".3s";
+    background.style.opacity = "1";
 
-    navMenu.addEventListener("click", () => {
-        navLinks.forEach(link => {
+    background.removeEventListener("click", backgroundClick);
+}
+
+
+// Called from xIcon event listener:
+function closeNavMenu() {
+    navMenu.style.width = "375px";
+    navMenu.style.right = "-375px";
+    navMenu.style.transition = ".3s";
+    background.style.opacity = "1";
+
+    background.removeEventListener("click", backgroundClick);
+}
+
+
+/*
+Closes navMenu if anchor tag id link is clicked,
+which is important for anchor tag id linking within current page:
+*/
+function closeOnNavLinkClick() {
+    const navLinks = document.querySelectorAll("nav a[href*='#']");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
             if (navMenu.style.right === "0px") {
-                navMenu.style.width = "375px";
                 navMenu.style.right = "-375px";
                 navMenu.style.transition = "0s";
-                // background.style.opacity = "1";
+                background.style.opacity = "1";
+
+                background.removeEventListener("click", backgroundClick);
             }
-         })
-
-    })
-
-    xIcon.addEventListener("click", () => {
-        if (navMenu.style.right === "0px") {
-            navMenu.style.width = "375px";
-            navMenu.style.right = "-375px";
-            navMenu.style.transition = ".3s";
-            // background.style.opacity = "1";
-        }
+        });
     });
-
-    // background.addEventListener("click", () => {
-    //     if (navMenu.style.right === "0px") {
-    //         navMenu.style.width = "375px";
-    //         // navMenu.style.right = "-375px";
-    //         console.log("hi")
-    //         navMenu.style.transition = ".3s";
-    //     }
-    // });
-
-
-    // document.addEventListener("click", (e) => {
-    //     console.log(e.target);
-    //     if (e.currentTarget.id === "xIcon") {
-    //         console.log("hi");
-    //         // if (navMenu.style.right === "0px") {
-    //             navMenu.style.width = "375px";
-    //             navMenu.style.right = "-375px";
-    //             navMenu.style.transition = ".3s";
-    //         // }
-    //     }
-    // });
-
-
-
 }
 
 
-
-
-
-function test() {
-    const navMenu = document.querySelector("#nav-menu");
-
-    if (navMenu.style.right !== "0px") {
-
-
-        window.addEventListener("click", (e) => {
-            console.log(navMenu.style.right);
-
-            console.log(e.target);
-            if (!document.contains(navMenu)) {
-                console.log(e.target);
-                navMenu.style.width = "375px";
-                navMenu.style.right = "-375px";
-                navMenu.style.transition = ".3s";
-            }
-        });
+/*
+Important for when navMenu is opened on one mobile viewport
+orientation, then viewport orientation changes with navMenu
+still open:
+*/
+function setNavMenuSize() {
+    if (window.innerWidth > 450) {
+        navMenu.style.width = "375px";
+    } else if (window.innerWidth <= 450) {
+        navMenu.style.width = "100vw";
     }
 }
 
 
-// (e.target.id !== "xIcon" || e.target.id === "navMenu")
+/*
+Important if navMenu left open before window resize
+or mobile viewport change in orientation:
+ */
+function resetBackgroundOpacityOnResize(event) {
+    if (event) {
+        background.style.opacity = "1";
+    }
+}
 
 
+/*
+Important if navMenu left open before window resize
+or mobile viewport change in orientation:
+ */
+function closeNavMenuOnResize(event) {
+    if (event) {
+        if (window.innerWidth <= 450) {
+            navMenu.style.right = "-100vw";
+        } else {
+            navMenu.style.right = "-375px";
+        }
+        navMenu.style.transition = "0s";
+    }
+}
 
 
-
-//         if (navMenu.style.right !== "0px") {
-//             if (mediaQuery.matches) {
-//                 console.log("hi");
-//                 // hamburgerIcon.style.position = "relative";
-//                 // body.style.overflow = "hidden";
-//                 // hamburgerIcon.style.backgroundColor = "red";
-//                 // } else {
-//                 navMenu.style.width = "400px";
-//                 // window.scroll(0, 0);
-//                 // navMenu.style.right = "50vw";
-//             }
-//                 // } else {
-//                 navMenu.style.right = "0";
-//
-//             // hamburgerIcon.style.position = "fixed";
-//
-//             // hamburgerIcon.style.rotate = "-90deg";
-//             navMenu.style.transition = ".5s";
-//             // hamburgerIcon.style.right = "5rem";
-//             // body.style.overflow = "hidden";
-//             // background.style.backgroundColor = "var(--black)";
-//             // background.style.opacity = ".4";
-//         } else {
-//             // hamburgerIcon.style.rotate = "0deg";
-//             navMenu.style.width = "375px";
-//             navMenu.style.right = "-375px";
-//             navMenu.style.transition = ".3s";
-//             // hamburgerIcon.style.position = "absolute";
-//
-//             // hamburgerIcon.style.right = "0";
-//             // body.style.overflow = "visible";
-//             // background.style.opacity = "1";
-//         }
-//
-//     });
-// }
-
-// function resetOpacity() {
-//     const mediaQuery = window.matchMedia("(min-width: 950px");
-//     const background = document.querySelector("#container-main");
-//
-//     window.addEventListener("resize", () => {
-//         if (window.innerWidth === "950px") {
-//             if (background.style.opacity === ".4") {
-//                 console.log("hi");
-//                 background.style.opacity = "1";
-//             }
-//         }
-//     })
-//
-// }
-
-
-
-
-
-
-window.addEventListener("DOMContentLoaded", openNavMenu());
-window.addEventListener("DOMContentLoaded", closeNavMenu());
-// window.addEventListener("DOMContentLoaded", resetOpacity());
+hamburgerIcon.addEventListener("click", openNavMenu);
+xIcon.addEventListener("click", closeNavMenu);
+document.addEventListener("DOMContentLoaded", closeOnNavLinkClick);
+window.addEventListener("resize", setNavMenuSize);
+window.addEventListener("resize", resetBackgroundOpacityOnResize);
+window.addEventListener("resize", closeNavMenuOnResize);
