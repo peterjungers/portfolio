@@ -71,10 +71,13 @@ orientation, then viewport orientation changes with navMenu
 still open:
 */
 function setNavMenuSize() {
-    if (window.innerWidth > 450) {
+    if (window.innerWidth > 450 && window.innerWidth <= 1050) {
         navMenu.style.width = "375px";
     } else if (window.innerWidth <= 450) {
         navMenu.style.width = "100vw";
+    } else if (window.innerWidth > 1050) {
+        // Allows navMenu width to stretch again when window resized
+        navMenu.style.width = null;
     }
 }
 

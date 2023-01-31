@@ -166,22 +166,22 @@ h1 .main-subheading {
     font-size: 1.75rem;
 }
 
-.desk-tab-header {
-    display: block;
-}
-
+/* Headers that work at desktop through mobile viewports: */
 .desk-mob-header {
     display: block;
 }
 
-.tab-mob-header {
+/* Headers that work at desktop through min-width 620px viewports: */
+.desk-620-header {
+    display: block;
+}
+
+/* Headers that work for mobile and Galaxy Fold viewports: */
+.mob-galaxy-header {
     display: none;
 }
 
-.mobile-header {
-    display: none;
-}
-
+/* Headers that work for Galaxy Fold viewports: */
 .galaxy-header {
     display: none;
 }
@@ -568,28 +568,18 @@ footer p {
     }
 }
 
-@media screen and (max-width: 760px) {
-    .desk-header {
-        display: none;
-    }
-
-    .tab-mob-header {
-        display: block;
-    }
-}
-
 @media screen and (max-width: 600px) {
     .grid-tables {
         display: block;
     }
 }
 
-@media screen and (max-width: 550px), (max-height: 450px) {
+@media screen and (max-width: 620px), (max-height: 450px) {
     /*
     Top padding for anchor links necessary because of sticky header
     (See UTILITIES section at top for attribution):
     */
-    :target::before {
+    :target::before { /* Check this because viewport changed from 550px */
         height: 5.35rem;
         margin-top: -5.35rem;
     }
@@ -608,16 +598,14 @@ footer p {
     h1 .main-subheading {
         font-size: 1.25rem;
     }
+}
 
-    .desk-tab-header {
+@media screen and (max-width:450px) {
+    .desk-620-header {
         display: none;
     }
 
-    .desk-mob-header {
-        display: block;
-    }
-
-    .mobile-header {
+    .mob-galaxy-header {
         display: block;
     }
 }
@@ -625,14 +613,6 @@ footer p {
 /* Galaxy Fold and other very narrow viewports: */
 @media screen and (max-width: 350px) {
     .desk-mob-header {
-        display: none;
-    }
-
-    .tab-mob-header {
-        display: none;
-    }
-
-    .mobile-header {
         display: none;
     }
 
@@ -645,4 +625,3 @@ footer p {
         right: 1rem;
     }
 }
-
