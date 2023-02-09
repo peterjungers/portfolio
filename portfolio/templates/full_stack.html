@@ -27,11 +27,10 @@
                     <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/dfdrl/index</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/dfdrl</a>
+                    <span class="text-weight-300">Code: </span><a href="https://github.com/peterjungers/dfdrl" target="_blank">dfdrl</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Learning objectives: </span>Create a sizeable site using the Flask framework; design SQLite database and improve SQLAlchemy query skills; utilize Bootstrap
-                    for CSS styling; use custom JavaScript to create searchable vehicle table.
+                    <span class="text-weight-300">Learning objectives: </span>Create a sizeable site using the Flask framework; design SQLite database and improve SQLAlchemy query skills; utilize Bootstrap for CSS styling; use custom JavaScript to create searchable vehicle table.
                 </li>
                 <li>
                     <span class="text-weight-300">Unforeseen learning outcomes: </span>Better understanding of the Jinja2 templating language and its capabilities; more familiarity with Bootstrap source file; less use of constructing raw SQL queries as a precursor to constructing SQLAlchemy queries—most queries were constructed with SQLAlchemy from the beginning.
@@ -54,7 +53,7 @@
             </p>
             <p>
                 I have been keeping stats of various kinds for the league since its first season, primarily using Google Sheets, which helped inspire the look and functionality of the new site. My other inspiration came from
-                <a href="#">my first Python project</a>, which was a searchable database that directly inspired the vehicles stats search on the new site. My primary goal in creating the site was not only to have a historical record of the league, but to create functionality for team managers to better track their vehicles.
+                <a href="{{ url_for('python', _anchor='ddrl-champions-league') }}">my first Python project</a>, which was a searchable database that directly inspired the vehicles stats search on the new site. My primary goal in creating the site was not only to have a historical record of the league, but to create functionality for team managers to better track their vehicles.
             </p>
         </div>
     </section>
@@ -71,7 +70,7 @@
                     <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/super_mario_quiz/index</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/super_mario_quiz_project</a>
+                    <span class="text-weight-300">Code: </span><a href="https://github.com/peterjungers/smb_quiz" target="_blank">smb_quiz</a>
                 </li>
                 <li>
                     <span class="text-weight-300">Learning objectives: </span>Become more familiar with the Django web framework.
@@ -93,7 +92,7 @@
         </div>
         <div class="paragraphs">
             <p>
-                Wanting to create a web app based on my earlier Python <a href="{{ url_for('python', _anchor='smb-quiz') }}">quiz project</a>, I used the opportunity to become more familiar with the Django web framework. Like the Python project before it, the web-based version of the quiz contains ten questions chosen randomly from a larger database. In order to write the questions and make the pixel art, I had to do substantial research (i.e., play the games a whole bunch). The quiz is designed to be something one would want to return to: the questions are generally moderately difficult, no correct answers are given upon an incorrect answer, and the database of questions is large enough (but small enough) to encourage repeat attempts.
+                Wanting to create a web app based on my earlier Python <a href="{{ url_for('python', _anchor='smb-quiz') }}">quiz project</a>, I used the opportunity to become more familiar with the Django web framework. Like the Python project before it, the web-based version of the quiz contains ten questions chosen randomly from a larger database. In order to write the questions and make the pixel art, I had to do substantial research (i.e., play the games a whole bunch). The quiz is designed to be something one would want to return to: the questions are generally moderately difficult, no correct answers are given upon an incorrect answer, and the database of questions is large enough (but small enough) to encourage repeat attempts. I used the awesome web app <a href="https://www.piskelapp.com" target="_blank">Piskel</a> to make the pixel art.
             </p>
             <p>
                 This was my first project in Django after learning the framework via tutorials. Although my familiarity with Django is not on par with Flask, I now feel more knowledgeable of its overall file structure, ORM syntax, and its general capabilities and features. In addition to being a Django project, the quiz site became equally an exercise in JavaScript, where randomizing images and adding stylistic touches helped to create the user experience I had hoped for.
@@ -113,7 +112,7 @@
                     <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/mk8d/index</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/mk8d_project</a>
+                    <span class="text-weight-300">Code: </span><a href="https://github.com/peterjungers/mk8d" target="_blank">mk8d</a>
                 </li>
                 <li>
                     <span class="text-weight-300">Learning objectives: </span>Improve Flask skills; improve HTML and custom CSS coding know-how; design SQLite database and improve SQLAlchemy query skills.
@@ -138,7 +137,7 @@
                 Mario Kart 8 Deluxe for the Nintendo Switch contains, to date, 72 tracks spread over 18 cups. The goal of my Cup Generator is to expand upon these original cups by constructing new ones based on thematic similarities across tracks throughout the game. For example, a number of tracks are set in the sky; others take place within large buildings. I therefore created a database of the tracks in the game, determined what the new thematic cups would be, then constructed the user interface to allow the easy viewing of these new cups. Like with the DFDRL project, I wanted to create a site that I could use. The site is updated and expanded every few months as Nintendo releases new tracks for the game.
             </p>
             <p>
-                This was my second Flask project, and first that was completely independent. My <a href="#">first Flask site</a>, though necessarily containing unique SQLAlchemy queries, relied heavily on tutorials for its HTML and CSS. With the Mario Kart 8 Deluxe Cup Generator, however, I became more comfortable and confident with all aspects of the framework, a trend that continues with each subsequent project I work on.
+                This was my second Flask project, and first that was completely independent. My <a href="https://github.com/peterjungers/afc_west_records" target="_blank">first Flask site</a>, though necessarily containing unique SQLAlchemy queries, relied heavily on tutorials for its HTML and CSS. With the Mario Kart 8 Deluxe Cup Generator, however, I became more comfortable and confident with all aspects of the framework, a trend that continues with each subsequent project I work on.
             </p>
         </div>
     </section>
@@ -149,16 +148,16 @@
         <div class="project-info">
             <ul>
                 <li>
-                    <span class="text-weight-300">Date: </span>January 2023
+                    <span class="text-weight-300">Date: </span>January/February 2023
                 </li>
                 <li>
                     <span class="text-weight-300">URL: </span><a href="#">peterjungers.com</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Code: </span><a href="#">github.com/peterjungers/</a>
+                    <span class="text-weight-300">Code: </span><a href="https://github.com/peterjungers/portfolio" target="_blank">portfolio</a>
                 </li>
                 <li>
-                    <span class="text-weight-300">Learning objectives: </span>Expand my knowledge and experience of web development by designing my own portfolio site; gain experience with Heroku and make the site live!
+                    <span class="text-weight-300">Learning objectives: </span>Expand my knowledge and experience of web development by designing my own portfolio site; deploy site using <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>.
                 </li>
                 <li>
                     <span class="text-weight-300">Unforeseen learning outcomes: </span>I don't know!

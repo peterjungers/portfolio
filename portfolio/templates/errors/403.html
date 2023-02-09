@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "template.html" %}
 
-</body>
-</html>
+{% block header %}
+    <h1 class="main-heading desk-620-header"><a href="#">Peter Jungers<span class="main-subheading"> | Web development</span></a></h1>
+    <div class="mob-galaxy-header">
+        <h1 class="main-heading"><a href="#">Peter Jungers</a></h1>
+        <h1 class="main-subheading"><a href="#">Web development</a></h1>
+    </div>
+{% endblock header %}
+
+{% block main_content %}
+        <h2 class="error">Error 403: Sorry, permission not authorized</h2>
+{% endblock main_content %}

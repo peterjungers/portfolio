@@ -8,7 +8,7 @@ Description: CSS stylesheet for Peter Jungers portfolio
 
 
 /* || CSS RESET */
-html, body, header, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td, img, figure, figcaption {
+html, body, div, header, nav, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td, img, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -55,6 +55,16 @@ body {
     column-gap: 3%;
 }
 
+a {
+    text-decoration-thickness: .03em;
+    text-underline-offset: 2px;
+    overflow-wrap: break-word;
+}
+
+a:focus {
+    outline-color: gray;
+}
+
 p a:link,
 p a:visited,
 p a:hover,
@@ -63,18 +73,8 @@ p a:active {
     color: var(--black);
 }
 
-a {
-    text-decoration-thickness: .03em;
-    text-underline-offset: 2px;
-    overflow-wrap: break-word;
-}
-
-a:hover {
+p a:hover {
     text-decoration-thickness: .05em;
-}
-
-a:focus {
-    outline-color: gray;
 }
 
 li {
@@ -100,6 +100,15 @@ figcaption {
 
 
 /* || UTILITIES */
+h2.error {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.75rem;
+}
+
+.vh-100 {
+    /*min-height: 100vh;*/
+}
+
 .text-weight-300 {
     font-weight: 300;
 }
@@ -305,6 +314,10 @@ h2.project-heading {
     color: var(--black);
 }
 
+.project-info a:hover {
+    text-decoration-thickness: .06em;
+}
+
 
 /* Tables */
 .grid-tables {
@@ -372,6 +385,7 @@ table a:active {
 
 #software {
     grid-column: 1 / span 2;
+    align-self: start;
 }
 
 /* Contains Education and Hobbies tables: */
@@ -428,6 +442,8 @@ table a:active {
 
 /* Footer */
 footer {
+    display: flex;
+    /*text-align: right;*/
     padding-bottom: 2rem;
     margin-top: 2rem;
 }
@@ -436,6 +452,18 @@ footer p {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     font-size: .85rem;
+}
+
+footer p a:hover {
+    text-decoration-thickness: .07em;
+}
+
+.footer-desk-tab {
+    display: block;
+}
+
+.footer-mobile {
+    display: none;
 }
 
 
@@ -488,6 +516,7 @@ footer p {
     .grid-site {
         display: block;
         max-width: 80%;
+        min-height: 100vh;
         margin: 0 auto;
     }
 
@@ -606,6 +635,18 @@ footer p {
     }
 
     .mob-galaxy-header {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-desk-tab {
+        display: none;
+    }
+
+    .footer-mobile {
         display: block;
     }
 }

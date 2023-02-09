@@ -1,7 +1,8 @@
 const hamburgerIcon = document.querySelector("#hamburger-icon");
 const xIcon = document.querySelector("#x-icon");
 const navMenu = document.querySelector("#nav-menu");
-const background = document.querySelector("#container-main");
+const containerMain = document.querySelector("#container-main");
+const background = document.querySelector(".background");
 
 
 function openNavMenu(event) {
@@ -13,8 +14,9 @@ function openNavMenu(event) {
     event.stopPropagation();
     navMenu.style.right = "0px";
     navMenu.style.transition = ".5s";
-    background.style.opacity = ".4";
+    containerMain.style.opacity = ".4";
 
+    containerMain.addEventListener("click", backgroundClick);
     background.addEventListener("click", backgroundClick);
 }
 
@@ -27,8 +29,9 @@ https://codeburst.io/the-off-click-7cbc08bb3df5):
 function backgroundClick() {
     navMenu.style.right = "-375px";
     navMenu.style.transition = ".3s";
-    background.style.opacity = "1";
+    containerMain.style.opacity = "1";
 
+    containerMain.removeEventListener("click", backgroundClick);
     background.removeEventListener("click", backgroundClick);
 }
 
@@ -38,8 +41,9 @@ function closeNavMenu() {
     navMenu.style.width = "375px";
     navMenu.style.right = "-375px";
     navMenu.style.transition = ".3s";
-    background.style.opacity = "1";
+    containerMain.style.opacity = "1";
 
+    containerMain.removeEventListener("click", backgroundClick);
     background.removeEventListener("click", backgroundClick);
 }
 
@@ -56,9 +60,9 @@ function closeOnNavLinkClick() {
             if (navMenu.style.right === "0px") {
                 navMenu.style.right = "-375px";
                 navMenu.style.transition = "0s";
-                background.style.opacity = "1";
+                containerMain.style.opacity = "1";
 
-                background.removeEventListener("click", backgroundClick);
+                containerMain.removeEventListener("click", backgroundClick);
             }
         });
     });
@@ -88,7 +92,7 @@ or mobile viewport change in orientation:
  */
 function resetBackgroundOpacityOnResize(event) {
     if (event) {
-        background.style.opacity = "1";
+        containerMain.style.opacity = "1";
     }
 }
 
