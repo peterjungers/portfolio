@@ -18,6 +18,7 @@
     <!-- DFDRL -->
     <section id="dfdrl" class="margin-btm-4">
         <h2 class="project-heading">Damon & Felix Die-Cast Racing League</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
@@ -37,16 +38,23 @@
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
+        <figure class="align-center">
+            <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website, desktop viewport.">
+            <figcaption>Index page, desktop viewport</figcaption>
+        </figure>
         <div class="image-flex">
             <figure class="align-center">
-                <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website.">
-                <figcaption>Index page for the DFDRL site</figcaption>
+                <img src="{{ url_for('static', filename='images/dfdrl_seasons.png') }}"
+                     alt="Season 10 page of the Damon & Felix Die-Cast Racing League website, with navigation menu opened, tablet viewport.">
+                <figcaption>Season 10 page, with navigation menu opened, tablet viewport</figcaption>
             </figure>
             <figure class="align-center">
-                <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website.">
-                <figcaption>Index page for the DFDRL site</figcaption>
+                <img src="{{ url_for('static', filename='images/dfdrl_vehicles.png') }}" alt="Vehicles page of the Damon & Felix Die-Cast Racing League website, mobile viewport.">
+                <figcaption>Vehicles page for the DFDRL website, mobile viewport</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
                 The Damon & Felix Die-Cast Racing League, of which I am a board member, team manager, and lead statistician, is a high-performance die-cast racing league, comprised primarily of Hot Wheels vehicles, but with a healthy showing from Matchbox. Each season culminates in the Champions League, where twelve vehicles compete to be the league champion. More information about the workings of the league are found on the <a href="#">site itself</a>.
@@ -61,13 +69,14 @@
     <!-- Super Mario Quiz -->
     <section id="smb-quiz" class="margin-btm-4">
         <h2 class="project-heading">Super Mario Bros. quiz</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
                     <span class="text-weight-300">Date: </span>January/February 2023
                 </li>
                 <li>
-                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/super_mario_quiz/index</a>
+                    <span class="text-weight-300">URL: </span><a href="#">peterjungers.com/super_mario_quiz</a>
                 </li>
                 <li>
                     <span class="text-weight-300">Code: </span><a href="https://github.com/peterjungers/smb_quiz" target="_blank">smb_quiz</a>
@@ -80,16 +89,18 @@
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
         <div class="image-flex">
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/smb_quiz_index.png') }}" alt="Index page for the Super Mario Bros. quiz., mobile viewport.">
+                <figcaption>Index page, mobile viewport</figcaption>
             </figure>
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/smb_quiz_quiz.png') }}" alt="Quiz page for the Super Mario Bros. quiz, tablet viewport.">
+                <figcaption>Quiz page, tablet viewport</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
                 Wanting to create a web app based on my earlier Python <a href="{{ url_for('python', _anchor='smb-quiz') }}">quiz project</a>, I used the opportunity to become more familiar with the Django web framework. Like the Python project before it, the web-based version of the quiz contains ten questions chosen randomly from a larger database. In order to write the questions and make the pixel art, I had to do substantial research (i.e., play the games a whole bunch). The quiz is designed to be something one would want to return to: the questions are generally moderately difficult, no correct answers are given upon an incorrect answer, and the database of questions is large enough (but small enough) to encourage repeat attempts. I used the awesome web app <a href="https://www.piskelapp.com" target="_blank">Piskel</a> to make the pixel art.
@@ -103,6 +114,7 @@
     <!-- MK8D Cup Generator -->
     <section id="mk8d" class="margin-btm-4">
         <h2 class="project-heading">Mario Kart 8 Deluxe Cup Generator</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
@@ -122,16 +134,18 @@
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
         <div class="image-flex">
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/mk8d_index.png') }}" alt="Index page of the Mario Kart 8 Deluxe Cup Generator, desktop viewport.">
+                <figcaption>Index page, desktop viewport</figcaption>
             </figure>
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/mk8d_cup.png') }}" alt="Underwater Cup page of the Mario Kart 8 Deluxe Cup Generator, desktop viewport.">
+                <figcaption>Underwater Cup page, mobile viewport</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
                 Mario Kart 8 Deluxe for the Nintendo Switch contains, to date, 72 tracks spread over 18 cups. The goal of my Cup Generator is to expand upon these original cups by constructing new ones based on thematic similarities across tracks throughout the game. For example, a number of tracks are set in the sky; others take place within large buildings. I therefore created a database of the tracks in the game, determined what the new thematic cups would be, then constructed the user interface to allow the easy viewing of these new cups. Like with the DFDRL project, I wanted to create a site that I could use. The site is updated and expanded every few months as Nintendo releases new tracks for the game.
@@ -145,6 +159,7 @@
     <!-- Portfolio -->
     <section id="portfolio" class="margin-btm-4">
         <h2 class="project-heading">Portfolio</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
@@ -160,24 +175,22 @@
                     <span class="text-weight-300">Learning objectives: </span>Expand my knowledge and experience of web development by designing my own portfolio site; deploy site using <a href="https://www.pythonanywhere.com" target="_blank">PythonAnywhere</a>.
                 </li>
                 <li>
-                    <span class="text-weight-300">Unforeseen learning outcomes: </span>I don't know!
+                    <span class="text-weight-300">Unforeseen learning outcomes: </span>Great experience gained in the intricacies of JavaScript functionality in constructing a navigation menu.
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
         <div class="image-flex">
             <figure class="align-center">
-                <img src="{{ url_for('static', filename='images/a.png') }}" alt="a">
+                <img src="{{ url_for('static', filename='images/portfolio_index.png') }}" alt="Index page of peterjungers.com, desktop viewport.">
                 <figcaption>The site you're visiting right now!</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A blanditiis deserunt dolor doloremque eveniet, impedit libero nisi porro possimus quidem repellendus veritatis voluptas voluptatibus! Accusantium beatae eaque explicabo magni suscipit.
-            </p>
-            <p>
-
+                The site you are visiting now is the culmination of over a year's worth of learning. Beginning in January of 2022, I began taking college courses related to computer programming, systems administration, TCP/IP, database design, SQL, and, finally, web development. In addition to these college courses, I taught myself the Flask and Django web frameworks using web resources, along with any other skills, relating to any topic, that I felt I needed, or simply wanted, to understand. Throughout this learning process, which I thoroughly enjoyed, I was driven by a desire not just to complete the tasks or assignments at hand, but to fully understand the reasons why things worked as they did, as well as the best practices associated with these tasks. My goal in this process was to gain the skills needed to start a new career in the world of technology—I now feel I have these skills. Web development combines my interests in programming, design, creativity, and collaboration, in a way nothing else ever has. I look forward to my new career!
             </p>
         </div>
     </section>
-
 {% endblock main_content %}

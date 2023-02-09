@@ -14,6 +14,7 @@
     <!-- News homepage -->
     <section id="news-homepage" class="margin-btm-4">
         <h2 class="project-heading">News homepage</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
@@ -34,16 +35,18 @@
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
         <div class="image-flex">
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/news_homepage_desktop.png') }}" alt="News homepage, desktop viewport.">
+                <figcaption>Desktop viewport</figcaption>
             </figure>
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/news_homepage_mobile.png') }}" alt="News homepage, mobile viewport.">
+                <figcaption>Mobile viewport</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
                 The specifications for the “News homepage” project required only desktop and mobile versions of the page—I felt it was appropriate to also design for a tablet viewport. A functioning mobile dropdown using JavaScript was an optional requirement—I chose to make one.
@@ -51,9 +54,10 @@
         </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- Sunnyside agency -->
     <section id="sunnyside-agency" class="margin-btm-4">
         <h2 class="project-heading">Sunnyside agency landing page</h2>
+        <!-- Project info -->
         <div class="project-info">
             <ul>
                 <li>
@@ -73,20 +77,18 @@
                 </li>
             </ul>
         </div>
+        <!-- Project images -->
         <div class="image-flex">
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/sunnyside_agency_desktop.png') }}" alt="Sunnyside agency landing page, desktop viewport.">
+                <figcaption>Desktop viewport</figcaption>
             </figure>
             <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
-            </figure>
-            <figure class="align-center">
-                <img src="" alt="">
-                <figcaption></figcaption>
+                <img src="{{ url_for('static', filename='images/sunnyside_agency_mobile.png') }}" alt="Sunnyside agency landing page, with navigation menu opened, mobile viewport.">
+                <figcaption>Mobile viewport, with navigation menu opened</figcaption>
             </figure>
         </div>
+        <!-- Project paragraphs -->
         <div class="paragraphs">
             <p>
                 Though the JavaScript component of this challenge was a requirement, the specifications again did not require a tablet viewport version of the page. I again chose to create one in order to have the page fully responsive.

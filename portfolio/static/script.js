@@ -1,8 +1,15 @@
+/*
+JavaScript for Peter Jungers portfolio website
+Author: Peter Jungers
+Date: January/February 2023
+*/
+
+
 const hamburgerIcon = document.querySelector("#hamburger-icon");
 const xIcon = document.querySelector("#x-icon");
 const navMenu = document.querySelector("#nav-menu");
 const containerMain = document.querySelector("#container-main");
-const background = document.querySelector(".background");
+const background = document.querySelector("#background");
 
 
 function openNavMenu(event) {
@@ -16,7 +23,6 @@ function openNavMenu(event) {
     navMenu.style.transition = ".5s";
     containerMain.style.opacity = ".4";
 
-    containerMain.addEventListener("click", backgroundClick);
     background.addEventListener("click", backgroundClick);
 }
 
@@ -26,13 +32,15 @@ Closes navMenu upon click of background outside of navMenu
 (This article was extremely helpful in getting this to work:
 https://codeburst.io/the-off-click-7cbc08bb3df5):
 */
-function backgroundClick() {
-    navMenu.style.right = "-375px";
-    navMenu.style.transition = ".3s";
-    containerMain.style.opacity = "1";
+function backgroundClick(e) {
+    if (!navMenu.contains(e.target)) {
+        navMenu.style.right = "-375px";
+        navMenu.style.transition = ".3s";
+        containerMain.style.opacity = "1";
 
-    containerMain.removeEventListener("click", backgroundClick);
-    background.removeEventListener("click", backgroundClick);
+        background.removeEventListener("click", backgroundClick);
+    }
+
 }
 
 
@@ -43,7 +51,6 @@ function closeNavMenu() {
     navMenu.style.transition = ".3s";
     containerMain.style.opacity = "1";
 
-    containerMain.removeEventListener("click", backgroundClick);
     background.removeEventListener("click", backgroundClick);
 }
 
@@ -54,11 +61,16 @@ which is important for anchor tag id linking within current page:
 */
 function closeOnNavLinkClick() {
     const navLinks = document.querySelectorAll("nav a[href*='#']");
+    const mediaQuery = window.matchMedia("(max-width: 450px");
 
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
             if (navMenu.style.right === "0px") {
-                navMenu.style.right = "-375px";
+                if (mediaQuery.matches) {
+                    navMenu.style.right = "-100vw";
+                } else {
+                    navMenu.style.right = "-375px";
+                }
                 navMenu.style.transition = "0s";
                 containerMain.style.opacity = "1";
 
@@ -80,19 +92,8 @@ function setNavMenuSize() {
     } else if (window.innerWidth <= 450) {
         navMenu.style.width = "100vw";
     } else if (window.innerWidth > 1050) {
-        // Allows navMenu width to stretch again when window resized
+        // Allows navMenu width to stretch again when window resized:
         navMenu.style.width = null;
-    }
-}
-
-
-/*
-Important if navMenu left open before window resize
-or mobile viewport change in orientation:
- */
-function resetBackgroundOpacityOnResize(event) {
-    if (event) {
-        containerMain.style.opacity = "1";
     }
 }
 
@@ -113,9 +114,20 @@ function closeNavMenuOnResize(event) {
 }
 
 
+/*
+Important if navMenu left open before window resize
+or mobile viewport change in orientation:
+ */
+function resetBackgroundOpacityOnResize(event) {
+    if (event) {
+        containerMain.style.opacity = "1";
+    }
+}
+
+
 hamburgerIcon.addEventListener("click", openNavMenu);
 xIcon.addEventListener("click", closeNavMenu);
 document.addEventListener("DOMContentLoaded", closeOnNavLinkClick);
 window.addEventListener("resize", setNavMenuSize);
-window.addEventListener("resize", resetBackgroundOpacityOnResize);
 window.addEventListener("resize", closeNavMenuOnResize);
+window.addEventListener("resize", resetBackgroundOpacityOnResize);

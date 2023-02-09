@@ -2,7 +2,7 @@
 # Program name:     Portfolio
 # Version:          1.0
 # Author:           Peter Jungers
-# Date:             January 2023
+# Date:             January/February 2023
 # Description:      Display of my skills related to web development
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 

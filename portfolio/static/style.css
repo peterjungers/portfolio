@@ -1,26 +1,26 @@
 /*
+CSS for Peter Jungers portfolio website
 Author: Peter Jungers
-Date: January 2023
-Description: CSS stylesheet for Peter Jungers portfolio
+Date: January/February 2023
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@200;300&display=swap');
 
 
 /* || CSS RESET */
-html, body, div, header, nav, main, footer, section, h1, h2, h3, h4, p, a, ul, li, table, caption, th, tr, td, img, figure, figcaption {
+html, body, div, header, nav, main, footer, section, h1, h2, h3, p, span, a, ul, li, table, caption, th, tr, td, img, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
 
+/* || Default styles are for desktop screens */
 /* || SITE COLORS */
 :root {
     --black: #000;
     --dark-gray: #919191;
     --gray: #9a9a9a;
-    /*--medium-light-gray: #e0e0e0; old */
     --medium-light-gray: #d9d9d9;
     --light-gray: #ececec;
     --very-light-gray: #f8f8f8;
@@ -45,11 +45,11 @@ body {
     background-color: var(--blue);
 }
 
-.background {
+#background {
     background-color: var(--very-light-gray);
 }
 
-.grid-site {
+#grid-site {
     display: grid;
     grid-template-columns: 2.25fr 1fr;
     column-gap: 3%;
@@ -83,7 +83,6 @@ li {
 
 img {
     width: 100%;
-    max-width: 800px;
 }
 
 figure {
@@ -93,20 +92,15 @@ figure {
 figcaption {
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
-    /*padding-left: 4rem;*/
     margin-top: -.5rem;
-    /*text-align: left;*/
 }
+/* END GENERAL STYLES */
 
 
 /* || UTILITIES */
 h2.error {
     font-family: "Cormorant Garamond", serif;
     font-size: 1.75rem;
-}
-
-.vh-100 {
-    /*min-height: 100vh;*/
 }
 
 .text-weight-300 {
@@ -141,9 +135,10 @@ h2.error {
     height: 2.75rem;
     margin-top: -2.75rem;
 }
+/* END UTILITIES */
 
 
-/* Header */
+/* || HEADER */
 header {
     margin: 0 0 1.75rem -1rem;
     padding: 2.5rem 0 1rem 1rem;
@@ -194,9 +189,10 @@ h1 .main-subheading {
 .galaxy-header {
     display: none;
 }
+/* END HEADER */
 
 
-/* Nav sidebar */
+/* || NAVIGATION MENU */
 #nav-menu {
     background-color: var(--light-gray);
     position: sticky;
@@ -258,14 +254,14 @@ nav .list-em-dash {
     padding: 2.5rem;
     padding-top: 4.75rem;
 }
+/* END NAVIGATION MENU */
 
 
-/* Main */
+/* || MAIN CONTENT */
 #container-main {
     min-width: 75%;
     max-width: 100%;
     margin-left: 15%;
-    /*padding-top: 2.5rem;*/
 }
 
 .paragraphs p {
@@ -289,7 +285,6 @@ h2.project-heading {
 
 .image-flex {
     display: flex;
-    /*flex-wrap: wrap;*/
     gap: 3%;
 }
 
@@ -318,8 +313,7 @@ h2.project-heading {
     text-decoration-thickness: .06em;
 }
 
-
-/* Tables */
+/* || Tables */
 .grid-tables {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -380,7 +374,6 @@ table a:active {
 
 #technical-skills {
     grid-column: 4 / span 3;
-    /*align-self: start;*/
 }
 
 #software {
@@ -438,12 +431,13 @@ table a:active {
 .sql-light {
     background-color: var(--light-orange);
 }
+/* END Tables */
+/* END MAIN CONTENT */
 
 
-/* Footer */
+/* || FOOTER */
 footer {
     display: flex;
-    /*text-align: right;*/
     padding-bottom: 2rem;
     margin-top: 2rem;
 }
@@ -465,9 +459,11 @@ footer p a:hover {
 .footer-mobile {
     display: none;
 }
+/* END FOOTER */
 
 
 /* || VIEWPORTS */
+/* || Max-width 1050px viewport */
 @media screen and (max-width: 1050px) {
     /*
     Top padding for anchor links necessary because of sticky header
@@ -496,7 +492,6 @@ footer p a:hover {
         z-index: 1;
         width: 375px;
         right: -375px;
-        /*transition: .5s;*/
         overflow: auto;
     }
 
@@ -509,28 +504,23 @@ footer p a:hover {
     }
 
     #container-main {
-        /*position: relative;*/
         margin-left: 0;
     }
 
-    .grid-site {
+    #grid-site {
         display: block;
         max-width: 80%;
         min-height: 100vh;
         margin: 0 auto;
     }
 
+    /* || Hamburger icon */
     #hamburger-icon {
-        /*position: absolute;*/
         display: flex;
         align-items: center;
-        /*top: 3.125rem;*/
-        /*right: 10%;*/
         min-width: 24px;
         height: 24px;
         cursor: pointer;
-        /*transition: .5s;*/
-        /*z-index: 2;*/
         rotate: -90deg;
     }
 
@@ -557,7 +547,9 @@ footer p a:hover {
     .hamburger-line::after {
         transform: translateY(8px);
     }
+    /* END Hamburger icon */
 
+    /* || X icon */
     #x-icon {
         position: absolute;
         display: flex;
@@ -585,8 +577,11 @@ footer p a:hover {
     .x-line::after {
         rotate: 45deg;
     }
+    /* END X icon */
 }
+/* END Max-width 1050px viewport */
 
+/* || Max-height 820px viewport */
 @media screen and (max-height: 820px) {
     /*
     Less top padding better visually for nav header,
@@ -597,22 +592,23 @@ footer p a:hover {
     }
 }
 
+/* || Max-width 600px viewport */
 @media screen and (max-width: 600px) {
     .grid-tables {
         display: block;
     }
 }
 
+/* || Max-width 620px, max-height 450px viewport */
 @media screen and (max-width: 620px), (max-height: 450px) {
     /*
     Top padding for anchor links necessary because of sticky header
     (See UTILITIES section at top for attribution):
     */
-    :target::before { /* Check this because viewport changed from 550px */
+    :target::before {
         height: 5.35rem;
         margin-top: -5.35rem;
     }
-
 
     header {
         padding-top: 1rem;
@@ -629,6 +625,14 @@ footer p a:hover {
     }
 }
 
+/* || Max-width 480px viewport */
+@media screen and (max-width: 480px) {
+    .image-flex {
+        flex-direction: column;
+    }
+}
+
+/* || Max-width 450px viewport */
 @media screen and (max-width:450px) {
     .desk-620-header {
         display: none;
@@ -651,8 +655,17 @@ footer p a:hover {
     }
 }
 
-/* Galaxy Fold and other very narrow viewports: */
+/* || Galaxy Fold and other very narrow viewports: */
 @media screen and (max-width: 350px) {
+    /*
+    Top padding for anchor links necessary because of sticky header
+    (See UTILITIES section at top for attribution):
+    */
+    :target::before {
+        height: 7.25rem;
+        margin-top: -7.25rem;
+    }
+
     .desk-mob-header {
         display: none;
     }
@@ -666,3 +679,4 @@ footer p a:hover {
         right: 1rem;
     }
 }
+/* END VIEWPORTS */
