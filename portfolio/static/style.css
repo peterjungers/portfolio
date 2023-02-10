@@ -83,6 +83,14 @@ li {
 
 img {
     width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+img.img-border {
+    border: 1px solid var(--medium-light-gray);
 }
 
 figure {
@@ -92,7 +100,23 @@ figure {
 figcaption {
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
+    margin-top: .75rem;
+}
+
+figcaption.fig-cap-window {
     margin-top: -.5rem;
+}
+
+figcaption a:link,
+figcaption a:visited,
+figcaption a:hover,
+figcaption a:focus,
+figcaption a:active {
+    color: var(--black);
+}
+
+figcaption a:hover {
+    text-decoration-thickness: .05em;
 }
 /* END GENERAL STYLES */
 
@@ -277,7 +301,7 @@ nav .list-em-dash {
 }
 
 .paragraphs p:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
 }
 
 h2.project-heading {
