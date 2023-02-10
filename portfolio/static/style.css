@@ -119,6 +119,10 @@ h2.error {
     margin-bottom: 4rem;
 }
 
+.img-smb-quiz-python {
+    width: 54%;
+}
+
 /*
  I thought this was a great solution to targeting anchor links
  so they wouldn't disappear behind a sticky header at the top
@@ -283,7 +287,7 @@ h2.project-heading {
     margin-bottom: .85rem;
 }
 
-.image-flex {
+.img-flex {
     display: flex;
     gap: 3%;
 }
@@ -627,8 +631,12 @@ footer p a:hover {
 
 /* || Max-width 480px viewport */
 @media screen and (max-width: 480px) {
-    .image-flex {
+    .img-flex {
         flex-direction: column;
+    }
+
+    .img-smb-quiz-python {
+        width: 100%;
     }
 }
 
