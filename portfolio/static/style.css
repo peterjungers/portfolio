@@ -89,6 +89,10 @@ img {
     color: var(--black);
 }
 
+img.img-max-width-900 {
+    max-width: 900px;
+}
+
 img.img-border {
     border: 1px solid var(--medium-light-gray);
 }

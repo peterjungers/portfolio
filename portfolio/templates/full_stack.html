@@ -40,7 +40,7 @@
         </div>
         <!-- DFDRL images -->
         <figure class="align-center">
-            <img src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website, desktop viewport.">
+            <img class="img-max-width-900" src="{{ url_for('static', filename='images/dfdrl_index.png') }}" alt="Index page of the Damon & Felix Die-Cast Racing League website, desktop viewport.">
             <figcaption class="fig-cap-window">Index page, desktop viewport</figcaption>
         </figure>
         <div class="img-flex">
@@ -66,7 +66,7 @@
         </div>
         <!-- DFDRL images -->
         <figure class="align-center">
-            <img class="img-border" src="{{ url_for('static', filename='images/dfdrl_erd.png') }}" alt="Entity relationship diagram for DFDRL database.">
+            <img class="img-max-width-900 img-border" src="{{ url_for('static', filename='images/dfdrl_erd.png') }}" alt="Entity relationship diagram for DFDRL database.">
             <figcaption>Entity relationship diagram for DFDRL database; SQLAlchemy queries based on diagram viewable <a href="https://github.com/peterjungers/dfdrl/blob/main/dfdrl/main/routes.py" target="_blank">here</a></figcaption>
         </figure>
     </section>
@@ -161,7 +161,7 @@
         </div>
         <!-- MK8D Cup Generator images -->
         <figure class="align-center">
-            <img class="img-border" src="{{ url_for('static', filename='images/mk8d_erd.png') }}" alt="Entity relationship diagram for MK8D Cup Generator database.">
+            <img class="img-max-width-900 img-border" src="{{ url_for('static', filename='images/mk8d_erd.png') }}" alt="Entity relationship diagram for MK8D Cup Generator database.">
             <figcaption>Entity relationship diagram for MK8D Cup Generator database</figcaption>
         </figure>
         <div class="img-flex">
@@ -200,12 +200,10 @@
             </ul>
         </div>
         <!-- Portfolio images -->
-        <div class="img-flex">
-            <figure class="align-center">
-                <img src="{{ url_for('static', filename='images/portfolio_index.png') }}" alt="Index page of peterjungers.com, desktop viewport.">
-                <figcaption class="fig-cap-window">The site you're visiting right now!</figcaption>
-            </figure>
-        </div>
+        <figure class="align-center">
+            <img class="img-max-width-900" src="{{ url_for('static', filename='images/portfolio_index.png') }}" alt="Index page of peterjungers.com, desktop viewport.">
+            <figcaption class="fig-cap-window">The site you're visiting right now!</figcaption>
+        </figure>
         <!-- Portfolio paragraphs -->
         <div class="paragraphs">
             <p>
