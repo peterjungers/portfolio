@@ -12,6 +12,7 @@ html, body, div, header, nav, main, footer, section, h1, h2, h3, p, span, a, ul,
     margin: 0;
     padding: 0;
     border: 0;
+    -webkit-text-size-adjust: none;
 }
 
 

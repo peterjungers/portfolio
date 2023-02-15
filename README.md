@@ -16,7 +16,7 @@ Python projects:
 - Super Mario Bros. character database
 - Super Mario Bros. quiz
 
-URL:  
+URL: https://www.peterjungers.com
 
 Peter Jungers  
 February 2023

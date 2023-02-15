@@ -12,6 +12,11 @@ Date: January/February 2023
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="icon" href="data:;base64,iVBORwOKGO="/>  {# For Chrome favicon console error #}
+    <!-- For iPhone message thumbnail: -->
+    <meta property="og:title" content="Peter Jungers">
+    <meta property="og:type" content="image.png">
+    <meta property="og:url" content="https://www.peterjungers.com">
+    <meta property="og:image" content="{{ url_for('static', filename='images/portfolio_index.png') }}">
 
     {% if title %}
         <title>Peter Jungers | {{ title }}</title>
@@ -50,7 +55,7 @@ Date: January/February 2023
                         <li><a href="mailto:peterjungers@gmail.com">peterjungers@gmail.com</a></li>
                         <li><a href="https://www.linkedin.com/in/peterjungers" target="_blank">LinkedIn</a></li>
                         <li><a href="https://github.com/peterjungers" target="_blank">GitHub</a></li>
-                        <li><a href="#">Resume (pdf)</a></li>
+                        <li><a href="{{ url_for('static', filename='documents/peterjungers_resume.pdf') }}" target="_blank">Resume (pdf)</a></li>
                     </ul>
                     <ul>
                         <li><a href="{{ url_for('index') }}">Home</a></li>
