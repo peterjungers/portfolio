@@ -32,15 +32,14 @@ Closes navMenu upon click of background outside of navMenu
 (This article was extremely helpful in getting this to work:
 https://codeburst.io/the-off-click-7cbc08bb3df5):
 */
-function backgroundClick(e) {
-    if (!navMenu.contains(e.target)) {
+function backgroundClick(event) {
+    if (!navMenu.contains(event.target)) {
         navMenu.style.right = "-375px";
         navMenu.style.transition = ".3s";
         containerMain.style.opacity = "1";
 
         background.removeEventListener("click", backgroundClick);
     }
-
 }
 
 
